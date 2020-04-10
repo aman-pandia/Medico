@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEdicines</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/Lato/Lato-BoldItalic.ttf">
+</head>
+<body>
+  <div class="wrap">
+    <div class="search">
+       <input type="text" id="myInput" placeholder="What are you looking for?" onkeyup="myFunction()">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div>
+ 
+ <table id="myTable">
+  <thead>
+    <tr>
+      <th>Medicine Name</th>
+      <th>Symptoms</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-column="Medicine Name">James</td>
+      <td data-column="Symptoms">Matman</td>
+     
+    </tr>
+    <tr>
+      <td data-column="Medicine Name">Andor</td>
+      <td data-column="Symptoms">Nagy</td>
+     
+    </tr>
+    <tr>
+      <td data-column="Medicine Name">Tamas</td>
+      <td data-column="Symptoms">Biro</td>
+     
+    </tr>
+    <tr>
+      <td data-column="Medicine Name">Zoli</td>
+      <td data-column="Symptoms">Mastah</td>
+     
+    </tr>
+    <tr>
+      <td data-column="Medicine Name">Szabi</td>
+      <td data-column="Symptoms">Nagy</td>
+     
+    </tr>
+  </tbody>
+</table>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+    
+</body>
+</html>
