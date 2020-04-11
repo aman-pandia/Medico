@@ -5,21 +5,22 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"MEDICO\""
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"MEDICO\"",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "author": "Anshuman Pandia",
   "license": "ISC",
   "dependencies": {
-    "electron": "^8.2.0"
+    "electron-updater": "^4.2.5"
   },
   "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1",
     "electron-packager": "^14.2.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/aman-pandia/Medico.git"
-  },
-  "build": "electron-builder build --win --publish never",
-  "deploy": "electron-builder build --win --publish always"
-
+  }
 }
