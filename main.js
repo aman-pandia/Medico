@@ -48,6 +48,10 @@ autoUpdater.on('update-available', () => {
     mainWindow.webContents.send('update_downloaded');
   });
 
+  ipcMain.on('restart_app', () => {
+    autoUpdater.quitAndInstall();
+  });
+
 
 
 
