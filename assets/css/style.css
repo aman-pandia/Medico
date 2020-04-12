@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
-  background: red;
+  background: #e5e5e5;
   font-family: 'Open Sans', sans-serif;
 
 }
@@ -14,10 +14,10 @@ body{
 
 #myInput {
   width: 100%;
-  border: 3px solid #00B4CC;
+  
   border-right: none;
   padding: 5px;
- 
+  border: 1.5px solid #00B4CC;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
@@ -42,17 +42,22 @@ body{
 /*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 30%;
+  transition: .3s;
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -5%);
+  transform: translate(-50%, -80%);
   margin-top: 80px;
+}
+.wrap:hover{
+	box-shadow: 0 0 10px rgba(5, 5, 88, 0.2);
 }
 
 table { 
-	width: 750px; 
+	width: 810px; 
 	border-collapse: collapse; 
-	margin:50px auto;
+	margin:25px auto;
+	
 	}
 
 /* Zebra striping */
@@ -64,14 +69,19 @@ th {
 	background: #3498db; 
 	color: white; 
 	font-weight: bold; 
+	transition: .3s;
 	}
 
 td, th { 
+	transition: .3s;
 	padding: 10px; 
 	border: 1px solid #ccc; 
 	text-align: left; 
 	font-size: 18px;
 	}
+td, th:hover{
+	box-shadow: 0 0 10px rgba(5, 5, 88, 0.2);
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
