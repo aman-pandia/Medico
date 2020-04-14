@@ -1,139 +1,81 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-body{
-  background: #e5e5e5;
-  font-family: 'Open Sans', sans-serif;
-
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-
-#myInput {
-  width: 100%;
-  
-  border-right: none;
-  padding: 5px;
-  border: 1.5px solid #00B4CC;
-  border-radius: 5px 0 0 5px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
   outline: none;
-  color: #9DBFAF;
 }
 
-#myInput:focus{
-  color: black;
+body {
+  background-color: #695acda6;
 }
 
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
+.form-holder {
+  transition: 0.5s ease;
+
+  position: absolute;
+  width: 350px;
+  height: 250px;
+
+  left: calc(50% - 175px);
+  bottom: calc(50% - 125px);
+
+  background-color: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-holder form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 5px;
+  align-items: center;
+}
+
+.form-holder form input {
+  background-color: #eeeeeeb9;
+  border-radius: 2px;
+  text-indent: 15px;
+}
+
+.form-holder form button {
+  background-color: #695acd;
   color: #fff;
-  border-radius: 0 5px 5px 0;
+  font-size: 15px;
+}
+
+.form-holder form a {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-holder form input,
+.form-holder form button {
+  border: none;
+  height: 40px;
+  width: 80%;
+  margin: 10px;
+}
+
+.form-holder form button:hover {
   cursor: pointer;
-  font-size: 20px;
+  transition: 0.3s;
+  opacity: 0.8;
 }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  transition: .3s;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%);
-  margin-top: 80px;
-}
-.wrap:hover{
-	box-shadow: 0 0 10px rgba(5, 5, 88, 0.2);
+.form-holder form button:disabled {
+  opacity: 0.1;
+  cursor: default;
 }
 
-table { 
-	width: 810px; 
-	border-collapse: collapse; 
-	margin:25px auto;
-	
-	}
-
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
-
-th { 
-	background: #3498db; 
-	color: white; 
-	font-weight: bold; 
-	transition: .3s;
-	}
-
-td, th { 
-	transition: .3s;
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 18px;
-	}
-td, th:hover{
-	box-shadow: 0 0 10px rgba(5, 5, 88, 0.2);
+.form-holder form p {
+  color: #695acda6;
+  text-decoration: underline;
 }
-
-/* 
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	table { 
-	  	width: 100%; 
-	}
-
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		/* Label the data */
-		content: attr(data-column);
-
-		color: #000;
-		font-weight: bold;
-	}
-
+.form-holder form p:hover {
+  color: #5e4cd3;
+  cursor: pointer;
 }
 
 #notification {
@@ -150,3 +92,5 @@ only screen and (max-width: 760px),
 	display: none;
   }
  
+
+

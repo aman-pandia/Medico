@@ -4,144 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEdicines</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/Lato/Lato-BoldItalic.ttf">
-  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function(){
+          $("#hide").click(function(){
+            $("section").hide();
+            $("div").show();
+          });
+          $("#show").click(function(){
+            $("section").show();
+            $("div").hide();
+          });
+        });
+
+    </script>
+    
 </head>
 <body>
-  <div class="wrap">
-    <div class="search">
-       <input type="text" id="myInput" placeholder="Search the medicine..." onkeyup="myFunction()">
-       <button type="submit" class="searchButton">
-         <i class="fa fa-search"></i>
-      </button>
-    </div>
- </div>
- 
- <table id="myTable">
-  <thead>
-    <tr>
-      <th>Medicine Name</th>
-      <th>Symptoms</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-column="Medicine Name">James</td>
-      <td data-column="Symptoms">Matman</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Andor</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Tamas</td>
-      <td data-column="Symptoms">Biro</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Zoli</td>
-      <td data-column="Symptoms">Mastah</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
-    <tr>
-      <td data-column="Medicine Name">Szabi</td>
-      <td data-column="Symptoms">Nagy</td>
-     
-    </tr>
 
-  </tbody>
-</table>
-<p id="version"></p>
+  <section class="form-holder">
+    <h5 style="text-align: center;">Search The Medicine</h5>
+    <form class="login-form">
+      <input type="text" placeholder="UserName" required />
+      <input type="text" placeholder="Problem" required />
+      <button id="hide">Submit</button>
+      
+
+    </form>
+</section>
+
+    <div id="myDIV" style="display: none;">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, esse a nemo voluptatibus, quaerat asperiores laborum odio, nobis voluptatem sed ex quae. Quidem fugit expedita labore quas provident? Enim, velit!</p>
+      <button id="show">Reset</button>
+    </div>
+
+
+<p id="version" style="width: 100%; text-align: center;"></p>
 <div id="notification" class="hidden">
   <p id="message"></p>
-  <button id="close-button" onClick="closeNotification()">
-    Close
-  </button>
-  <button id="restart-button" onClick="restartApp()" class="hidden">
-    Restart
-  </button>
 </div>
+
 <script>
    const { ipcRenderer } = require('electron');
     const version = document.getElementById('version');
@@ -152,7 +66,9 @@
       version.innerText = 'Version ' + arg.version;
     });
 </script>
+
 <script>
+
   const notification = document.getElementById('notification');
 const message = document.getElementById('message');
 const restartButton = document.getElementById('restart-button');
