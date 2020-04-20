@@ -89,40 +89,41 @@ body {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   .hidden {
-	display: none;
+	display: none !important;
   }
  
 /* ----- MEdicine Div ------- */
 
-#myDiv {
+#myDIV {
   margin-top: 2rem;
 }
 
-#med {
+.med {
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
+  border: 2px solid rgba(0, 0, 0, 0.5);
   width: 700px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
-#med h3, #med h2 {
+.med h3, .med h2 {
   text-align: center;
 }
 
-#med > div {
+.med > div {
   padding: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#med > div:last-child {
+.med > div:last-child {
   border-bottom: none;
 }
 
-#med .comp {
+.med .comp {
   text-align: center;
 }
 
-#med .footer {
+ .footer {
   text-align: center;
 }
 
