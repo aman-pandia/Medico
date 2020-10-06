@@ -119,9 +119,23 @@ body {
   border-bottom: none;
 }
 
+.med .head {
+  background-color: #5e4cd3;
+  color: white;
+}
+
 .med .comp {
   text-align: center;
+  color: white;
+  background-color: #8575eb;
 }
+
+.dosage .row {
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  text-align: center;
+}
+
 
  .footer {
   text-align: center;

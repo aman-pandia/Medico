@@ -76,8 +76,21 @@ submitBtn.on('click',() => {
       </div>
       <div class="dosage">
         <h3>Dosage</h3>
-        <p>Time : <span class="time">${med.time}</span></p>
-        <p>Before/After food : <span class="bef_aft">${med.BAF}</span></p>
+        <hr/>
+        <div class="row">
+          <div class="col">
+            <h4>Time</h4>
+          </div>
+          <div class="col">
+            <h4>Food</h4>
+          </div>
+          <div class="col">
+            ${med.time}
+          </div>
+          <div class="col">
+            ${med.BAF}
+          </div>
+        </div>
       </div>
       <div class="additional">
         <p>Additional Notes : <span class="addi">${med.notes}</span></p>
